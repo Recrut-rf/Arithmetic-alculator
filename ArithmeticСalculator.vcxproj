@@ -152,10 +152,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ArithmeticСalculator.cpp" />
+    <ClCompile Include="ConsoleOutput.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="StringCheck.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArithmeticСalculator.h" />
+    <ClInclude Include="ConsoleOutput.h" />
+    <ClInclude Include="StringCheck.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
