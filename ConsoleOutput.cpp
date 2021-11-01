@@ -26,37 +26,17 @@ void ConsoleOutput::show()
 	system("cls");
 #endif // !__linux__
 #endif // __APPLE__
+	
+	std::cout << "\nВведите строку: ";
+	std::getline(std::cin, str);
 
-	std::cout << "\n1. Ввод выражения: " << std::endl;
-	std::cout << "2. Повторить? " << std::endl;
-	std::cout << "3. Выход " << std::endl;
-	std::cout << "Выберете пункт меню: ";		
+	stringCheck = sChek_.check(str);
 
-	std::cin >> menuItem;
+	if (!stringCheck.first)	
+		std::cout << "Ошибка " << stringCheck.second << std::endl;	
+	else
+		std::cout << str << '\t' << ar_.calculate(str) << std::endl;	
 
-	switch (menuItem)
-	{
-	case 1:
-	case 2:
-		std::cout << "Введите строку: ";
-		std::cin >> str;
-		stringCheck = sChek_.check(str);
-
-
-		if (!stringCheck.first)
-		{
-			std::cout << "Ошибка " << stringCheck.second << std::endl;
-			break;
-		}
-		else
-			std::cout << str << '\t' << ar_.calculate(str) << std::endl;
-	case 3:
-		std::cout << "Благодарим за работу." << std::endl;
-		break;	
-	default:
-		std::cout << "Такого пункта в меню нет. Программа завершается " << std::endl;
-	}
-		
 
 #ifndef __APPLE__
 		system("pause");
@@ -64,8 +44,8 @@ void ConsoleOutput::show()
 #ifndef __linux__
 		system("pause");
 #endif // !__linux__
-#endif // __APPLE__
-	
+
+#endif // __APPLE__			   	
 }
 
 void ConsoleOutput::initialize()

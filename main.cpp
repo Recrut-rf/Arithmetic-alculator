@@ -28,6 +28,8 @@ int main(int argc, char* argv[])
 		for (int i = 1; i < argc; ++i)
 			inputStr += std::string(argv[i]);
 
+		checkStr = stringCheck.check(inputStr);
+
 		if (!checkStr.first)		
 			std::cout << "Ошибка " << checkStr.second << std::endl;		
 		else
